@@ -3,9 +3,49 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>测试js</title>
-    <script type="text/javascript" src="js/index.js"></script>
+    <style type="text/css">
+        .left{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 100%;
+            width: 20%;
+        }
+        .right{
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 80%;
+            height: 100%;
+        }
+    </style>
+
 </head>
 <body>
-<pre id="console"></pre>
+<div class="left" id="menu">
+    <a href="javascript:" data-src="demo/String.format.html">String.format</a>
+</div>
+<iframe class="right" src="" frameborder="0" id="win"></iframe>
+<script type="text/javascript">
+    var addEvent =document.addEventListener ? function(elem , type , fn){
+        elem.addEventListener(type , fn , false);
+    } : function(elem , type , fn){
+        elem.attachEvent('on' + type , fn);
+    };
+    var $ = function(id){
+        return document.getElementById(id);
+    };
+
+    var menu = $('menu');
+    var win = $('win');
+    addEvent(menu , 'click' , function(e){
+        var target = e.target || e.srcElement;
+        if(target.nodeName.toLocaleLowerCase() === 'a'){
+             win.src = target.getAttribute('data-src');
+        }
+    });
+
+</script>
 </body>
 </html>
