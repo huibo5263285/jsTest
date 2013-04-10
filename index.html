@@ -6,16 +6,16 @@
     <style type="text/css">
         .left{
             position: absolute;
-            left: 0px;
-            top: 0px;
+            left: 0;
+            top: 0;
             height: 100%;
             width: 20%;
         }
         .right{
             display: block;
             position: absolute;
-            top: 0px;
-            right: 0px;
+            top: 0;
+            right: 0;
             width: 80%;
             height: 100%;
         }
@@ -26,7 +26,7 @@
 <div class="left" id="menu">
     <a href="javascript:" data-src="demo/String.format.html">String.format</a>
 </div>
-<iframe class="right" src="" frameborder="0" id="win"></iframe>
+<iframe class="right" src="main.html" frameborder="1" id="win"></iframe>
 <script type="text/javascript">
     var addEvent =document.addEventListener ? function(elem , type , fn){
         elem.addEventListener(type , fn , false);
